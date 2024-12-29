@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://3c8tre1baqyn"]
+
+[ext_resource type="Script" path="res://editor/window_position.gd" id="1_7na2j"]
+[ext_resource type="Script" path="res://editor/space_to_restart.gd" id="2_2y3li"]
+
+[node name="DevTools" type="Node"]
+
+[node name="WindowPosition" type="Node" parent="."]
+script = ExtResource("1_7na2j")
+viewport_position = Vector2(1923, 94)
+viewport_size = Vector2i(1640, 535)
+
+[node name="SpaceToRestart" type="Node" parent="."]
+script = ExtResource("2_2y3li")
