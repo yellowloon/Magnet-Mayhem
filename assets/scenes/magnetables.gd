@@ -24,7 +24,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	self.position += dir
+	self.position += Vector2(dir.x * 0.2, dir.y * 0.2)
 	pass
 func MagnetBeam(MagnetCharge):
 	if attracting == true or repulsing == true:

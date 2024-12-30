@@ -8,12 +8,11 @@
 radius = 31.4006
 
 [node name="Player" type="CharacterBody2D"]
-rotation = 1.64934
+rotation = 1.5708
 script = ExtResource("1_sf84n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(2, 2)
 texture = ExtResource("2_g7pio")
 
 [node name="CobaltPullerExplosionPusher" type="RayCast2D" parent="."]
