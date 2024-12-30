@@ -16,13 +16,13 @@ texture_filter = 1
 texture = ExtResource("2_g7pio")
 
 [node name="CobaltPullerExplosionPusher" type="RayCast2D" parent="."]
-target_position = Vector2(0, 250)
+target_position = Vector2(0, 64)
 collide_with_areas = true
 script = ExtResource("3_nblp7")
 Charge = -1
 
 [node name="ExplosionPullerCobaltPusher" type="RayCast2D" parent="."]
-target_position = Vector2(0, -250)
+target_position = Vector2(0, -64)
 collide_with_areas = true
 script = ExtResource("3_nblp7")
 Charge = 1

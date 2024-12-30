@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwy0jr787hrps"]
+[gd_scene load_steps=5 format=3 uid="uid://bwy0jr787hrps"]
 
 [ext_resource type="PackedScene" uid="uid://dhkyj2kbyl1sa" path="res://assets/scenes/Explosives.tscn" id="2_2cdeg"]
-[ext_resource type="PackedScene" path="res://assets/scenes/Cobalt.tscn" id="3_emnke"]
+[ext_resource type="PackedScene" uid="uid://dswp0px34tlyt" path="res://assets/scenes/Cobalt.tscn" id="3_emnke"]
 [ext_resource type="PackedScene" uid="uid://qd5dirr4kxtw" path="res://assets/scenes/player.tscn" id="3_y17qn"]
+[ext_resource type="Script" path="res://assets/scenes/enemy_spawner.gd" id="4_f2tqk"]
 
 [node name="main" type="Node2D"]
 
@@ -11,9 +12,10 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Explosive" parent="." instance=ExtResource("2_2cdeg")]
-position = Vector2(0, -247)
+position = Vector2(0, -67)
 
 [node name="Cobalt" parent="." instance=ExtResource("3_emnke")]
-position = Vector2(0, 301)
+position = Vector2(0, 64)
 
 [node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("4_f2tqk")
