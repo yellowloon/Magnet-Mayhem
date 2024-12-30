@@ -34,3 +34,9 @@ func _on_button_pressed():
 	SignalingSingleton.StartGame()
 	$Node2D.visible = false
 	pass # Replace with function body.
+
+
+
+func _on_button_toggled(toggled_on):
+	SignalingSingleton.motionsickness = !SignalingSingleton.motionsickness
+	pass # Replace with function body.

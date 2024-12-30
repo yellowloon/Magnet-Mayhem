@@ -87,4 +87,16 @@ text = "0
 label_settings = SubResource("LabelSettings_5kyle")
 horizontal_alignment = 1
 
+[node name="Button" type="Button" parent="Node2D"]
+texture_filter = 1
+offset_top = 108.0
+offset_right = 33.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("3_fctpb")
+theme_override_font_sizes/font_size = 4
+toggle_mode = true
+text = "Motion Sickness"
+autowrap_mode = 3
+
 [connection signal="pressed" from="Node2D/Overlay/Button" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="Node2D/Button" to="." method="_on_button_toggled"]

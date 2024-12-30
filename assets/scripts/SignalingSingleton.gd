@@ -9,6 +9,7 @@ signal Start
 signal Pause
 var HighCobalt = 0
 var playing = false
+var motionsickness = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
