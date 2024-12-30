@@ -20,6 +20,7 @@ script = ExtResource("1_75ag1")
 Charge = 1
 PlayerHitAction = SubResource("Resource_lgxyf")
 Sound = ExtResource("4_pw00m")
+type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

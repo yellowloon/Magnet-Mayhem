@@ -3,6 +3,8 @@ extends Area2D
 @export var Charge : int
 @export var PlayerHitAction : onhitplayer
 @export var Sound : AudioStream
+@export var type : int
+@onready var anim = preload("res://assets/scenes/animated_sprite_2d.tscn")
 var dir = Vector2(0,0)
 var axis
 var repulsing = false
@@ -71,6 +73,13 @@ func _on_area_entered(area):
 	get_parent().Audio.pitch_scale = randf_range(0.4, 0.8)
 	get_parent().Audio.stream = Sound
 	get_parent().Audio.play()
+	
+	var jimmy = anim.instantiate()
+	get_parent().add_child(jimmy)
+	jimmy.position = self.position
+	jimmy.type = type
+	jimmy.thingy()
+	
 	self.queue_free()
 	pass # Replace with function body.
 func SpeedUp():
