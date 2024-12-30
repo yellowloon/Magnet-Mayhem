@@ -9,6 +9,7 @@ func _ready():
 	SignalingSingleton.Start.connect(Start)
 	SignalingSingleton.CobaltUp.connect(Upscore)
 	SignalingSingleton.Damaged.connect(lowerhealth)
+	$Node2D/HighScore.text = str(SignalingSingleton.HighCobalt)
 	$AnimatedSprite2D. frame = 0
 	$AnimatedSprite2D2.frame = 0
 	$AnimatedSprite2D3.frame = 0
