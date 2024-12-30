@@ -54,6 +54,8 @@ script = ExtResource("2_hhdcw")
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("4_f2tqk")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="EnemySpawner"]
+
 [node name="UI" parent="." instance=ExtResource("5_epnir")]
 position = Vector2(-64, -64)
 

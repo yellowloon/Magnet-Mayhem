@@ -2,6 +2,7 @@ extends Area2D
 
 @export var Charge : int
 @export var PlayerHitAction : onhitplayer
+@export var Sound : AudioStream
 var dir = Vector2(0,0)
 var axis
 var repulsing = false
@@ -61,6 +62,7 @@ func UpdateState():
 func _on_area_entered(area):
 	print("john")
 	PlayerHitAction.OnHit()
+	
 	self.queue_free()
 	pass # Replace with function body.
 func SpeedUp():
