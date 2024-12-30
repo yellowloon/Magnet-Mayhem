@@ -11,14 +11,14 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if Input.is_action_just_pressed("Up"):
 		SignalingSingleton.UpdateMagnetables.emit()
-		self.rotation_degrees = 0
+		self.rotation_degrees = 180
 	if Input.is_action_just_pressed("Down"):
 		SignalingSingleton.UpdateMagnetables.emit()
-		self.rotation_degrees = 180
+		self.rotation_degrees = 0
 	if Input.is_action_just_pressed("Left"):
 		SignalingSingleton.UpdateMagnetables.emit()
-		self.rotation_degrees = 270
+		self.rotation_degrees = 90
 	if Input.is_action_just_pressed("Right"):
 		SignalingSingleton.UpdateMagnetables.emit()
-		self.rotation_degrees = 90
+		self.rotation_degrees = 270
 	
