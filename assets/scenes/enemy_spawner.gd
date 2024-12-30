@@ -3,7 +3,7 @@ var previouslocation
 var location = 0
 var locations = [Vector2(0,64),Vector2(0,-64),Vector2(64,0),Vector2(-64,0)]
 var countdown = 0
-var targetCountdown
+var targetCountdown = 200
 var type
 var SpawnSpeed = 120
 @onready var explosive = preload("res://assets/scenes/Explosives.tscn")
@@ -11,10 +11,14 @@ var SpawnSpeed = 120
 #0 is cobalt 1 is explosive
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SignalingSingleton.CobaltUp.connect(SpeedUp)
-	targetCountdown = randi_range(150,225)
+	SignalingSingleton.Start.connect(Start)
 	pass # Replace with function body.
-
+func Start():
+	SignalingSingleton.CobaltUp.connect(SpeedUp)
+	SpeedUp()
+	targetCountdown = randi_range(150,225)
+	for x in get_children():
+		x.queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -5,6 +5,10 @@ var Cobalt = 0
 signal UpdateMagnetables
 signal Damaged
 signal CobaltUp
+signal Start
+signal Pause
+var HighCobalt = 0
+var playing = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -18,8 +22,17 @@ func DmgPlayer():
 	Damaged.emit()
 	if Health <= 0:
 		print("dead")
+		playing = false
+		Pause.emit()
 	pass
 func ScoreIncrease():
 	Cobalt += 1
 	CobaltUp.emit()
+	if Cobalt > HighCobalt:
+		HighCobalt = Cobalt
 	pass
+func StartGame():
+	playing = true
+	Cobalt = 0
+	Health = 3
+	Start.emit()

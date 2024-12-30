@@ -1,25 +1,60 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwy0jr787hrps"]
+[gd_scene load_steps=11 format=3 uid="uid://bwy0jr787hrps"]
 
-[ext_resource type="PackedScene" uid="uid://dhkyj2kbyl1sa" path="res://assets/scenes/Explosives.tscn" id="2_2cdeg"]
-[ext_resource type="PackedScene" uid="uid://dswp0px34tlyt" path="res://assets/scenes/Cobalt.tscn" id="3_emnke"]
+[ext_resource type="Script" path="res://assets/scripts/Background.gd" id="2_hhdcw"]
 [ext_resource type="PackedScene" uid="uid://qd5dirr4kxtw" path="res://assets/scenes/player.tscn" id="3_y17qn"]
 [ext_resource type="Script" path="res://assets/scenes/enemy_spawner.gd" id="4_f2tqk"]
+[ext_resource type="Texture2D" uid="uid://d28he7wg7ea7d" path="res://assets/sprites/Background-Sheet.png" id="4_jk01s"]
 [ext_resource type="PackedScene" uid="uid://cm1tfbofpdr2o" path="res://assets/scenes/ui.tscn" id="5_epnir"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua4gg"]
+atlas = ExtResource("4_jk01s")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pje4"]
+atlas = ExtResource("4_jk01s")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emore"]
+atlas = ExtResource("4_jk01s")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g0c7"]
+atlas = ExtResource("4_jk01s")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t74p5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua4gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pje4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emore")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g0c7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("3_y17qn")]
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_t74p5")
+script = ExtResource("2_hhdcw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Explosive" parent="." instance=ExtResource("2_2cdeg")]
-position = Vector2(0, -67)
-
-[node name="Cobalt" parent="." instance=ExtResource("3_emnke")]
-position = Vector2(0, 64)
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("4_f2tqk")
 
 [node name="UI" parent="." instance=ExtResource("5_epnir")]
-position = Vector2(-6, -95)
+position = Vector2(-64, -64)
+
+[node name="Player" parent="." instance=ExtResource("3_y17qn")]
