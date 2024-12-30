@@ -29,15 +29,17 @@ func _process(delta):
 	if dir == Vector2(0,0):
 		UpdateState()
 	pass
-func MagnetBeam(MagnetCharge):
+func MagnetBeam(MagnetCharge,type):
 	if attracting == true or repulsing == true:
 		return
 	if MagnetCharge == Charge:
-		dir = Vector2(-dir.x,-dir.y)
-		repulsing = true
+		if type == 0:
+			dir = Vector2(-dir.x,-dir.y)
+			repulsing = true
 	else:
-		dir = Vector2(dir.x * 2, dir.y * 2)
-		attracting = true
+		if type == 1:
+			dir = Vector2(dir.x * 2, dir.y * 2)
+			attracting = true
 		pass
 	
 	pass
