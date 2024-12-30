@@ -11,6 +11,7 @@ var SpawnSpeed = 120
 #0 is cobalt 1 is explosive
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SignalingSingleton.CobaltUp.connect(SpeedUp)
 	targetCountdown = randi_range(150,225)
 	pass # Replace with function body.
 
@@ -20,8 +21,8 @@ func _process(delta):
 	countdown +=1 * delta * SpawnSpeed
 	if countdown >= targetCountdown:
 		SpawnMagnetable()
-		print("WHEREE")
 		countdown = 0
+		targetCountdown = randi_range(150 / (log(SignalingSingleton.Cobalt * 0.5 + 3)),225)
 	pass
 func SpawnMagnetable():
 	#if randi_range(1,5) > 4:
@@ -33,4 +34,5 @@ func SpawnMagnetable():
 	self.add_child(type)
 	type.position = locations[location]
 	type.UpdateState
-	print("joghn")
+func SpeedUp():
+	SpawnSpeed = (120) * log(SignalingSingleton.Cobalt + 3)
