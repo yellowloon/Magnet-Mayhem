@@ -61,6 +61,7 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 z_index = 4
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_2l74s")
 animation = &"cobalt"
 script = ExtResource("3_3yffp")

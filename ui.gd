@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var Batteries = [get_child(0),get_child(1),get_child(2)]
+@onready var off =  preload("res://assets/sprites/volumeoff.png")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SignalingSingleton.Pause.connect(Pause)
@@ -43,4 +44,16 @@ func _on_button_toggled(toggled_on):
 		$Node2D/Button.text = "Motion Sickness ON"
 	else:
 		$Node2D/Button.text = "Motion Sickness OFF"
+	pass # Replace with function body.
+
+
+func _on_button_2_toggled(toggled_on):
+	if toggled_on == true:
+		$Node2D/Button2.icon = off
+		SignalingSingleton.Mute.emit()
+		SignalingSingleton.Muted = true
+	else:
+		$Node2D/Button2.icon = preload("res://assets/sprites/volumeon.png")
+		SignalingSingleton.Unmute.emit()
+		SignalingSingleton.Muted = false
 	pass # Replace with function body.

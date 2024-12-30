@@ -6,6 +6,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SignalingSingleton.Pause.connect(yousuckstupid)
+	SignalingSingleton.Mute.connect(mute)
+	SignalingSingleton.Unmute.connect(unmute)
 	Music.stream = Song
 	Music.play()
 	pass # Replace with function body.
@@ -22,3 +24,9 @@ func _on_audio_stream_player_2d_finished():
 	Music.stream = Song
 	Music.play()
 	pass # Replace with function body.
+func mute():
+	$AudioStreamPlayer2D.volume_db = -100
+	#$EnemySpawner/AudioStreamPlayer2D.volume_db = -100
+func unmute():
+	$AudioStreamPlayer2D.volume_db = 0
+	#$EnemySpawner/AudioStreamPlayer2D.volume_db = 0

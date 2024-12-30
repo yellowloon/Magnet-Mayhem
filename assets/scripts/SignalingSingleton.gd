@@ -7,6 +7,9 @@ signal Damaged
 signal CobaltUp
 signal Start
 signal Pause
+signal Mute
+signal Unmute
+var Muted = false
 var HighCobalt = 0
 var playing = false
 var motionsickness = false
