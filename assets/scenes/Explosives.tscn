@@ -6,7 +6,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdkgf"]
 
-[node name="Magnetables" type="Area2D"]
+[node name="Explosives" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_ia0t5")
 Charge = -1

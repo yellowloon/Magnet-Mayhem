@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwy0jr787hrps"]
 
-[ext_resource type="PackedScene" uid="uid://dhkyj2kbyl1sa" path="res://assets/scenes/magnetables.tscn" id="2_2cdeg"]
+[ext_resource type="PackedScene" uid="uid://dhkyj2kbyl1sa" path="res://assets/scenes/Explosives.tscn" id="2_2cdeg"]
 [ext_resource type="PackedScene" uid="uid://qd5dirr4kxtw" path="res://assets/scenes/player.tscn" id="3_y17qn"]
 
 [node name="main" type="Node2D"]
