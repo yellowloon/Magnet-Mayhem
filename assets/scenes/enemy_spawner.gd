@@ -5,6 +5,7 @@ var locations = [Vector2(0,64),Vector2(0,-64),Vector2(64,0),Vector2(-64,0)]
 var countdown = 0
 var targetCountdown
 var type
+var SpawnSpeed = 120
 @onready var explosive = preload("res://assets/scenes/Explosives.tscn")
 @onready var cobalt = preload("res://assets/scenes/Cobalt.tscn")
 #0 is cobalt 1 is explosive
@@ -16,7 +17,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	countdown +=1 * delta * 120
+	countdown +=1 * delta * SpawnSpeed
 	if countdown >= targetCountdown:
 		SpawnMagnetable()
 		print("WHEREE")

@@ -30,15 +30,16 @@ script = ExtResource("1_lrcy5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(45, 40)
 sprite_frames = SubResource("SpriteFrames_y0c77")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(8, 0)
+position = Vector2(53, 40)
 sprite_frames = SubResource("SpriteFrames_y0c77")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(16, 0)
+position = Vector2(61, 40)
 sprite_frames = SubResource("SpriteFrames_y0c77")
 frame_progress = 0.463891

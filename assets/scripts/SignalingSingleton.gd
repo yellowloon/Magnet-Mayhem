@@ -3,6 +3,7 @@ extends Node
 var Health = 3
 var Cobalt = 0
 signal UpdateMagnetables
+signal Damaged
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,6 +14,7 @@ func _process(delta):
 	pass
 func DmgPlayer():
 	Health -= 1
+	Damaged.emit()
 	if Health <= 0:
 		print("dead")
 	pass
