@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -400.0
 @export var Audio : AudioStreamPlayer2D
 
 func _physics_process(delta: float) -> void:
+	
 	if SignalingSingleton.playing == false:
 		return
 	# Get the input direction and handle the movement/deceleration.

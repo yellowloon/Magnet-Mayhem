@@ -15,6 +15,6 @@ func _process(delta):
 	pass
 func changespeed():
 	if SignalingSingleton.motionsickness == true:
-		self.speed_scale = 1
+		self.speed_scale = 0
 		return
 	self.speed_scale = 1 + log(SignalingSingleton.Cobalt / 15 + 3)

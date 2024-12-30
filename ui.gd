@@ -16,6 +16,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Input.is_action_just_pressed("Space") and SignalingSingleton.playing == false:
+		SignalingSingleton.StartGame()
+		$Node2D.visible = false
 	pass
 func lowerhealth():
 	if SignalingSingleton.Health <3:
@@ -23,6 +26,7 @@ func lowerhealth():
 	pass
 func Upscore():
 	$Label.text = str(SignalingSingleton.Cobalt)
+	$"Node2D/Current Score".text = str(SignalingSingleton.Cobalt)
 	pass
 func Start():
 	$AnimatedSprite2D. frame = 0
@@ -30,7 +34,7 @@ func Start():
 	$AnimatedSprite2D3.frame = 0
 func Pause():
 	$Node2D.visible = true
-	$Node2D/Label.text = str(SignalingSingleton.HighCobalt)
+	$Node2D/HighScore.text = str(SignalingSingleton.HighCobalt)
 func _on_button_pressed():
 	SignalingSingleton.StartGame()
 	$Node2D.visible = false
