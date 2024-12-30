@@ -39,4 +39,8 @@ func _on_button_pressed():
 
 func _on_button_toggled(toggled_on):
 	SignalingSingleton.motionsickness = !SignalingSingleton.motionsickness
+	if toggled_on == true:
+		$Node2D/Button.text = "Motion Sickness ON"
+	else:
+		$Node2D/Button.text = "Motion Sickness OFF"
 	pass # Replace with function body.

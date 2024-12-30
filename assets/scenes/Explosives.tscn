@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhkyj2kbyl1sa"]
+[gd_scene load_steps=6 format=3 uid="uid://dhkyj2kbyl1sa"]
 
 [ext_resource type="Script" path="res://assets/scenes/magnetables.gd" id="1_ia0t5"]
 [ext_resource type="Resource" uid="uid://biifs5s073wc7" path="res://assets/resources/Explosion.tres" id="2_eiw3l"]
+[ext_resource type="AudioStream" uid="uid://cnx0bmrmf5yuo" path="res://assets/sfx/Explosion.wav" id="3_i4nae"]
 [ext_resource type="Texture2D" uid="uid://dm55203sopc35" path="res://assets/sprites/bomb.png" id="3_tsn5l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdkgf"]
@@ -11,13 +12,18 @@ collision_mask = 2
 script = ExtResource("1_ia0t5")
 Charge = -1
 PlayerHitAction = ExtResource("2_eiw3l")
+Sound = ExtResource("3_i4nae")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, -2)
 texture = ExtResource("3_tsn5l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.25, 0.25)
 shape = SubResource("RectangleShape2D_tdkgf")
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

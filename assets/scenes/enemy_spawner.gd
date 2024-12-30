@@ -8,6 +8,7 @@ var type
 var SpawnSpeed = 120
 @onready var explosive = preload("res://assets/scenes/Explosives.tscn")
 @onready var cobalt = preload("res://assets/scenes/Cobalt.tscn")
+@export var Audio : AudioStreamPlayer2D
 #0 is cobalt 1 is explosive
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,10 +19,13 @@ func Start():
 	SpeedUp()
 	targetCountdown = randi_range(150,225)
 	for x in get_children():
-		x.queue_free()
-
+		if x != Audio:
+			x.queue_free()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if SignalingSingleton.playing == false:
+		return
 	countdown +=1 * delta * SpawnSpeed
 	if countdown >= targetCountdown:
 		SpawnMagnetable()
