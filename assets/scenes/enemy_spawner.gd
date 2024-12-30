@@ -16,8 +16,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	countdown +=1
-	if countdown == targetCountdown:
+	countdown +=1 * delta * 120
+	if countdown >= targetCountdown:
 		SpawnMagnetable()
 		print("WHEREE")
 		countdown = 0
