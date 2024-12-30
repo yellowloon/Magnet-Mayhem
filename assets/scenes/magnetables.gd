@@ -10,14 +10,14 @@ var attracting = false
 func _ready():
 	Charge = PlayerHitAction.Charge
 	$Sprite2D.texture = PlayerHitAction.texture
-
+#
 	SignalingSingleton.UpdateMagnetables.connect(UpdateState)
-	if self.position.y == 0:
-		axis = "x"
-		dir = Vector2(-self.position.x / abs(self.position.x),0)
-	else:
-		axis = "y"
-		dir = Vector2(0,-self.position.y / abs(self.position.y))
+	#if self.position.y == 0:
+		#axis = "x"
+		#dir = Vector2(-self.position.x / abs(self.position.x),0)
+	#else:
+		#axis = "y"
+		#dir = Vector2(0,-self.position.y / abs(self.position.y))
 
 	pass # Replace with function body.
 
@@ -25,6 +25,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	self.position += Vector2(dir.x * 0.2, dir.y * 0.2)
+	if dir == Vector2(0,0):
+		UpdateState()
 	pass
 func MagnetBeam(MagnetCharge):
 	if attracting == true or repulsing == true:

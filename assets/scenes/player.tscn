@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://assets/scripts/MagnetCast.gd" id="3_nblp7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y6jjo"]
-radius = 31.4006
+radius = 16.0312
 
 [node name="Player" type="CharacterBody2D"]
 rotation = 1.5708
@@ -16,13 +16,13 @@ texture_filter = 1
 texture = ExtResource("2_g7pio")
 
 [node name="CobaltPullerExplosionPusher" type="RayCast2D" parent="."]
-target_position = Vector2(0, 64)
+target_position = Vector2(0, 32)
 collide_with_areas = true
 script = ExtResource("3_nblp7")
 Charge = -1
 
 [node name="ExplosionPullerCobaltPusher" type="RayCast2D" parent="."]
-target_position = Vector2(0, -64)
+target_position = Vector2(0, -32)
 collide_with_areas = true
 script = ExtResource("3_nblp7")
 Charge = 1
