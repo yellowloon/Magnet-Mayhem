@@ -8,7 +8,6 @@
 radius = 9.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("Audio")]
-rotation = 1.5708
 script = ExtResource("1_sf84n")
 Audio = NodePath("AudioStreamPlayer2D")
 
