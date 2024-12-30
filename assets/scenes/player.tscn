@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://btwsxtk68tvgo" path="res://assets/sprites/Magnet.png" id="2_g7pio"]
 [ext_resource type="Script" path="res://assets/scripts/MagnetCast.gd" id="3_nblp7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_y6jjo"]
-radius = 16.0312
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtvox"]
+radius = 9.0
 
 [node name="Player" type="CharacterBody2D"]
 rotation = 1.5708
@@ -32,4 +32,12 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_y6jjo")
+shape = SubResource("CapsuleShape2D_mtvox")
+
+[node name="Area2D2" type="Area2D" parent="."]
+rotation = 1.5708
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CapsuleShape2D_mtvox")

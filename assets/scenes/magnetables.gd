@@ -6,6 +6,7 @@ var dir = Vector2(0,0)
 var axis
 var repulsing = false
 var attracting = false
+var Speed = 25
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Charge = PlayerHitAction.Charge
@@ -24,7 +25,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	self.position += Vector2(dir.x * 0.2, dir.y * 0.2)
+	self.position += Vector2(dir.x * Speed * delta, dir.y * Speed * delta)
 	if dir == Vector2(0,0):
 		UpdateState()
 	pass
