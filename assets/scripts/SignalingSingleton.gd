@@ -1,6 +1,7 @@
 extends Node
 
 var Health = 3
+var Cobalt = 0
 signal UpdateMagnetables
 # Called when the node enters the scene tree for the first time.
 func _ready():
