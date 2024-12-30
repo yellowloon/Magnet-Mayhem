@@ -9,5 +9,5 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Magnetables" parent="." instance=ExtResource("2_2cdeg")]
+[node name="Explosive" parent="." instance=ExtResource("2_2cdeg")]
 position = Vector2(0, -247)
