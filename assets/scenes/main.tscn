@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwy0jr787hrps"]
+[gd_scene load_steps=3 format=3 uid="uid://bwy0jr787hrps"]
 
+[ext_resource type="PackedScene" uid="uid://dhkyj2kbyl1sa" path="res://assets/scenes/magnetables.tscn" id="2_2cdeg"]
 [ext_resource type="PackedScene" uid="uid://qd5dirr4kxtw" path="res://assets/scenes/player.tscn" id="3_y17qn"]
 
 [node name="main" type="Node2D"]
@@ -7,3 +8,6 @@
 [node name="Player" parent="." instance=ExtResource("3_y17qn")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Magnetables" parent="." instance=ExtResource("2_2cdeg")]
+position = Vector2(0, -247)

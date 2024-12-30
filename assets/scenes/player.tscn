@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://qd5dirr4kxtw"]
+[gd_scene load_steps=5 format=3 uid="uid://qd5dirr4kxtw"]
 
 [ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_sf84n"]
 [ext_resource type="Texture2D" uid="uid://btwsxtk68tvgo" path="res://assets/sprites/Magnet.png" id="2_g7pio"]
 [ext_resource type="Script" path="res://assets/scripts/MagnetCast.gd" id="3_nblp7"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_y6jjo"]
+radius = 31.4006
+
 [node name="Player" type="CharacterBody2D"]
+rotation = 1.64934
 script = ExtResource("1_sf84n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -14,10 +18,19 @@ texture = ExtResource("2_g7pio")
 
 [node name="CobaltPullerExplosionPusher" type="RayCast2D" parent="."]
 target_position = Vector2(0, 250)
+collide_with_areas = true
 script = ExtResource("3_nblp7")
 Charge = -1
 
 [node name="ExplosionPullerCobaltPusher" type="RayCast2D" parent="."]
 target_position = Vector2(0, -250)
+collide_with_areas = true
 script = ExtResource("3_nblp7")
 Charge = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_y6jjo")

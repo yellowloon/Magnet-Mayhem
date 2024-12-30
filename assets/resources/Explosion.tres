@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="ExplosiveOnHit" load_steps=2 format=3 uid="uid://biifs5s073wc7"]
+
+[ext_resource type="Script" path="res://assets/scripts/ExplosiveOnHit.gd" id="1_des47"]
+
+[resource]
+script = ExtResource("1_des47")

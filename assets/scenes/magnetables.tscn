@@ -1,22 +1,25 @@
 [gd_scene load_steps=6 format=3 uid="uid://dhkyj2kbyl1sa"]
 
 [ext_resource type="Script" path="res://assets/scenes/magnetables.gd" id="1_ia0t5"]
-[ext_resource type="Shader" path="res://assets/scripts/Emissive.gdshader" id="2_eaemk"]
+[ext_resource type="Script" path="res://assets/scripts/ExplosiveOnHit.gd" id="2_gb02s"]
 [ext_resource type="Texture2D" uid="uid://dm55203sopc35" path="res://assets/sprites/bomb.png" id="3_tsn5l"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_57dd3"]
-shader = ExtResource("2_eaemk")
-shader_parameter/emmissive_color = Color(1, 1, 1, 1)
+[sub_resource type="Resource" id="Resource_fimu7"]
+script = ExtResource("2_gb02s")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdkgf"]
 
 [node name="Magnetables" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_ia0t5")
+Charge = -1
+PlayerHitAction = SubResource("Resource_fimu7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-material = SubResource("ShaderMaterial_57dd3")
 texture = ExtResource("3_tsn5l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tdkgf")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
