@@ -64,4 +64,4 @@ func _on_area_entered(area):
 	self.queue_free()
 	pass # Replace with function body.
 func SpeedUp():
-	Speed = (12.5 + SignalingSingleton.Cobalt) * 1.75
+	Speed = (25) * log(SignalingSingleton.Cobalt / 4 + 3)

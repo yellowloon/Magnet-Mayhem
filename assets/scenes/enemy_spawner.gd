@@ -35,4 +35,4 @@ func SpawnMagnetable():
 	type.position = locations[location]
 	type.UpdateState
 func SpeedUp():
-	SpawnSpeed = (120) * log(SignalingSingleton.Cobalt + 3)
+	SpawnSpeed = (120) * log((SignalingSingleton.Cobalt / 5) + 3)
