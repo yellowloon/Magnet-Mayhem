@@ -17,4 +17,4 @@ func _physics_process(delta: float) -> void:
 		self.rotation_degrees = 270
 	if Input.is_action_just_pressed("Right"):
 		self.rotation_degrees = 90
-		pass
+	

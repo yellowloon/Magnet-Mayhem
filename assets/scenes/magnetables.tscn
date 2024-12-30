@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhkyj2kbyl1sa"]
+
+[ext_resource type="Script" path="res://assets/scenes/magnetables.gd" id="1_ia0t5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdkgf"]
+
+[node name="Magnetables" type="Area2D"]
+script = ExtResource("1_ia0t5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tdkgf")
