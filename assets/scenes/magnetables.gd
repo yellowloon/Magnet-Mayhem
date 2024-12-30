@@ -9,6 +9,8 @@ var attracting = false
 var Speed = 25
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SpeedUp()
+	SignalingSingleton.CobaltUp.connect(SpeedUp)
 	Charge = PlayerHitAction.Charge
 	$Sprite2D.texture = PlayerHitAction.texture
 #
@@ -61,3 +63,5 @@ func _on_area_entered(area):
 	PlayerHitAction.OnHit()
 	self.queue_free()
 	pass # Replace with function body.
+func SpeedUp():
+	Speed = (12.5 + SignalingSingleton.Cobalt) * 2

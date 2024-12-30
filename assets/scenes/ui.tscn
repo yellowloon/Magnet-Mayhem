@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cm1tfbofpdr2o"]
+[gd_scene load_steps=8 format=3 uid="uid://cm1tfbofpdr2o"]
 
 [ext_resource type="Script" path="res://ui.gd" id="1_lrcy5"]
 [ext_resource type="Texture2D" uid="uid://dxgacaq2yjl0x" path="res://assets/sprites/Battery-Sheet.png" id="2_xcttp"]
+[ext_resource type="FontFile" uid="uid://bsvd1d72vd8e7" path="res://assets/smol.ttf" id="3_fctpb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abc3k"]
 atlas = ExtResource("2_xcttp")
@@ -25,6 +26,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_nk43k"]
+font = ExtResource("3_fctpb")
+font_size = 4
+
 [node name="UI" type="Node2D"]
 script = ExtResource("1_lrcy5")
 
@@ -43,3 +48,12 @@ texture_filter = 1
 position = Vector2(61, 40)
 sprite_frames = SubResource("SpriteFrames_y0c77")
 frame_progress = 0.463891
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = -54.0
+offset_top = 36.0
+offset_right = -14.0
+offset_bottom = 59.0
+text = "0"
+label_settings = SubResource("LabelSettings_nk43k")

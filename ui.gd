@@ -1,8 +1,9 @@
 extends Node2D
 
-var Batteries = [$AnimatedSprite2D,$AnimatedSprite2D2,$AnimatedSprite2D3]
+@onready var Batteries = [get_child(0),get_child(1),get_child(2)]
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SignalingSingleton.CobaltUp.connect(Upscore)
 	SignalingSingleton.Damaged.connect(lowerhealth)
 	$AnimatedSprite2D. frame = 0
 	$AnimatedSprite2D2.frame = 0
@@ -15,5 +16,8 @@ func _process(delta):
 	pass
 func lowerhealth():
 	if SignalingSingleton.Health <3:
-		print(Batteries[2])
+		Batteries[SignalingSingleton.Health].frame = 1
+	pass
+func Upscore():
+	$Label.text = str(SignalingSingleton.Cobalt)
 	pass

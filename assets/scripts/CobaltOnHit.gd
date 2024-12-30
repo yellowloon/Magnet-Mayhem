@@ -3,5 +3,5 @@ class_name CobaltOnHit
 
 func OnHit():
 	#particles
-	SignalingSingleton.Cobalt += 1
+	SignalingSingleton.ScoreIncrease()
 	pass
