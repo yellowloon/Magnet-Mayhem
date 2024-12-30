@@ -8,6 +8,9 @@ var repulsing = false
 var attracting = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Charge = PlayerHitAction.Charge
+	$Sprite2D.texture = PlayerHitAction.texture
+
 	SignalingSingleton.UpdateMagnetables.connect(UpdateState)
 	if self.position.y == 0:
 		axis = "x"

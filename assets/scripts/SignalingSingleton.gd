@@ -12,4 +12,6 @@ func _process(delta):
 	pass
 func DmgPlayer():
 	Health -= 1
+	if Health <= 0:
+		print("dead")
 	pass

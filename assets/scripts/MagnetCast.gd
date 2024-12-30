@@ -8,6 +8,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if self.is_colliding():
+	if self.is_colliding() and get_collider():
 		get_collider().MagnetBeam(Charge)
 	pass

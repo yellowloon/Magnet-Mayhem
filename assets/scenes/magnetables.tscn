@@ -1,11 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhkyj2kbyl1sa"]
+[gd_scene load_steps=5 format=3 uid="uid://dhkyj2kbyl1sa"]
 
 [ext_resource type="Script" path="res://assets/scenes/magnetables.gd" id="1_ia0t5"]
-[ext_resource type="Script" path="res://assets/scripts/ExplosiveOnHit.gd" id="2_gb02s"]
+[ext_resource type="Resource" uid="uid://biifs5s073wc7" path="res://assets/resources/Explosion.tres" id="2_eiw3l"]
 [ext_resource type="Texture2D" uid="uid://dm55203sopc35" path="res://assets/sprites/bomb.png" id="3_tsn5l"]
-
-[sub_resource type="Resource" id="Resource_fimu7"]
-script = ExtResource("2_gb02s")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdkgf"]
 
@@ -13,7 +10,7 @@ script = ExtResource("2_gb02s")
 collision_mask = 2
 script = ExtResource("1_ia0t5")
 Charge = -1
-PlayerHitAction = SubResource("Resource_fimu7")
+PlayerHitAction = ExtResource("2_eiw3l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

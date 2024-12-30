@@ -1,6 +1,9 @@
-[gd_resource type="Resource" script_class="ExplosiveOnHit" load_steps=2 format=3 uid="uid://biifs5s073wc7"]
+[gd_resource type="Resource" script_class="ExplosiveOnHit" load_steps=3 format=3 uid="uid://biifs5s073wc7"]
 
 [ext_resource type="Script" path="res://assets/scripts/ExplosiveOnHit.gd" id="1_des47"]
+[ext_resource type="Texture2D" uid="uid://dm55203sopc35" path="res://assets/sprites/bomb.png" id="2_nmpvy"]
 
 [resource]
 script = ExtResource("1_des47")
+Charge = -1
+texture = ExtResource("2_nmpvy")
